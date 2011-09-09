@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>The Urbanist's Map of Tyler</title>
+    <title>Tyler, TX</title>
 
     <link rel="stylesheet" type="text/css" href="reset.css" /> 
     <link rel="stylesheet" type="text/css" href="urban.css" />
@@ -17,42 +17,32 @@
 <div id="map_canvas"></div>
 
 <div id="flag"><img src="logo.png"/></div> 
+<div id="rose"><img src="compass-rose.png"/></div> 
 
 <div id="right-col">
-    <h1>The Urbanist's<br/>Map of Tyler</h1>
-
-    <div class="like-button">
-        <iframe src="http://www.facebook.com/plugins/like.php?href=media.hacktyler.com%2Furban%2Furban.html&amp;send=false&amp;layout=box_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px;" allowTransparency="true"></iframe>
-    </div>
-
-    <div id="description">
-        <p>TKTK</p>
-    </div>
-
-    <h2 id="instructions">
-        <p class="story-link">Read more: <a href="http://hacktyler.com/">Hack Tyler</a></p>
-    </h2>
+    <h1>KEY</h1>
 
     <div class="legend">
-        TKTK
-    </div>
-
-    <div class="note">
-        TKTK
+        <table>
+            <tr><td>Line</td><td>Sidewalk</td></tr>
+            <tr><td>Green</td><td>Park</td></tr>
+            <tr><td>Line</td><td>Road</td></tr>
+            <tr><td>Line</td><td>City Limits</td></tr>
+            <tr><td>Dot</td><td>Bus Stop</td></tr>
+            <tr><td>Line</td><td>Bike Route</td></tr>
+            <tr><td>Line</td><td>Bike Lane</td></tr>
+        </table>
     </div>
 
     <form id="search"> 
-        <label for="query"><h3>Search for an address:</h3></label> 
-        <input id="query" type="text" /> 
-        <div id="alt-addresses"></div> 
+        <input id="query" type="text" placeholder="Enter an address..." /> 
     </form>
 
     <div id="byline" >
-        Implementation: <a href="http://twitter.com/onyxfish">Christopher Groskopf</a>
+        A <a href="http://twitter.com/onyxfish">HACK TYLER </a> MAP
     </div>
     <div id="credits">
-        Map style: TKTK
-	    Data source: TKTK
+        DATA: <a href="http://www.smithcountymapsite.org/">CITY OF TYLER GIS</a>
 	</div>
 </div>
 

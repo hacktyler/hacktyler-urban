@@ -67,8 +67,35 @@ function make_hash() {
     return parts.join(",");
 }
 
+function setup_address_prompt() {
+    $('[placeholder]').focus(function() {
+      var input = $(this);
+      if (input.val() == input.attr('placeholder')) {
+        input.val('');
+        input.removeClass('placeholder');
+      }
+    }).blur(function() {
+      var input = $(this);
+      if (input.val() == '' || input.val() == input.attr('placeholder')) {
+        input.addClass('placeholder');
+        input.val(input.attr('placeholder'));
+      }
+    }).blur();
+
+    $('[placeholder]').parents('form').submit(function() {
+      $(this).find('[placeholder]').each(function() {
+        var input = $(this);
+        if (input.val() == input.attr('placeholder')) {
+          input.val('');
+        }
+      })
+    });
+}
+
 $(document).ready(function() {
-    map = new L.Map('map_canvas', { minZoom:12, maxZoom:16 });
+    setup_address_prompt();
+
+    map = new L.Map('map_canvas', { minZoom:12, maxZoom:17, attributionControl: false });
     map.setView(new L.LatLng(32.325, -95.304), 13);
 
     map.addLayer(urban_tiles);

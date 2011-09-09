@@ -1,14 +1,12 @@
 html, body { width: 100%; height: 100% }
 
-body {font-family: Arial, sans-serif; font-size:12px; line-height:1.4em; margin: 0; padding: 0; width:100%; height: 100%;}
+body { font-family: Arial, sans-serif; font-size:12px; line-height:1.4em; margin: 0; padding: 0; width:100%; height: 100%; }
 
-h1 { font-size: 26px; margin: 18px 0 9px 0; line-height: 1.2em; font-weight: normal; font-family: Georgia, serif; margin-top:0;}
-h2 { font-size: 16px; padding-top:5px; margin-top:15px; margin-bottom:5px; text-shadow:#ddd 1px 1px 1px; line-height:1.3em; }
-
-/* Header is inside id="content"*/
-.like-button { margin-bottom:15px; float:right; width:50px; height:75px; overflow:hidden;}
+h1 { font-size: 16px; font-weight: bold; }
+h2 { font-size: 16px; margin-top:5px; }
 
 #flag { position:absolute; right:30px; top:10px; z-index:9999; }
+#rose { position:absolute; right:20px; top:140px; z-index:9999; }
 
 #map_canvas {
     width: 100%;
@@ -16,22 +14,14 @@ h2 { font-size: 16px; padding-top:5px; margin-top:15px; margin-bottom:5px; text-
     position:absolute;
 }
 
-#right-col { z-index:900; position:absolute; bottom: 50px; right:10px; width:270px; padding: 15px; background-color:#f0f0f0; border:1px solid #333; }
+#right-col { z-index:900; position:absolute; bottom: 30px; right:30px; width:160px; padding: 10px; background-color: #F3EFE9; border:1px solid black; text-align: center;}
 
-#right-col form#search { margin-bottom:12px; margin-top:10px; }
-#right-col form#search label {display:block;}
-#right-col form#search h3 {font-weight:bold;}
-#right-col form#search input {margin-top:4px;}
-#right-col form#search input[type=text] {width:150px;}
-#right-col form#search #alt-addresses p {margin-bottom:2px; font-style:italic;}
-#right-col form#search #alt-addresses a {display:block; margin-bottom:3px;}
-#right-col form#search #alt-addresses .hide-alternatives {text-align:right;}
+.legend { margin-top: 5px; }
+.legend table { width: 100%; text-align: left; }
 
-#right-col .legend { line-height:20px; width: 220px; }
-#right-col .legend h2 { font-weight: normal; }
+#right-col form#search { margin-bottom: 5px; margin-top:5px; }
+#right-col form#search input[type=text] { width:150px; }
+.placeholder { color: #aaa; }
 
-#right-col .note { margin-top: 7px; font-size: 11px; }
+#credits { margin-top:3px; }
 
-#right-col #description p { margin-bottom: 7px; width:220px; } 
-
-#credits, #byline { margin-top:5px; }
