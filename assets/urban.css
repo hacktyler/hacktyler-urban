@@ -16,7 +16,7 @@ h2 { font-size: 16px; margin-top:5px; }
 
 #right-col { z-index:900; position:absolute; bottom: 30px; right:30px; width:160px; padding: 10px; background-color: #F3EFE9; border:1px solid black; text-align: center;}
 
-.legend { margin-top: 5px; }
+.legend { margin-top: 7px; }
 .legend table { width: 100%; text-align: left; }
 .legend td { vertical-align: top; }
 
