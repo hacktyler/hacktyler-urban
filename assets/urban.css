@@ -18,6 +18,7 @@ h2 { font-size: 16px; margin-top:5px; }
 
 .legend { margin-top: 5px; }
 .legend table { width: 100%; text-align: left; }
+.legend td { vertical-align: top; }
 
 #right-col form#search { margin-bottom: 5px; margin-top:5px; }
 #right-col form#search input[type=text] { width:150px; }
