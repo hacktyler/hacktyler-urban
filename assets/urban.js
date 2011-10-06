@@ -93,16 +93,16 @@ $(document).ready(function() {
     var tilejson = {
         tilejson: '1.0.0',
         scheme: 'tms',
-        tiles: ['http://media.hacktyler.com/maptiles/tyler-urban/{z}/{x}/{y}.png'],
-        /*grids: ['http://a.tiles.mapbox.com/mapbox/1.0.0/geography-class/{z}/{x}/{y}.grid.json'],
-        formatter: function(options, data) { return data.NAME }*/
+        tiles: ['http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.png'],
+        grids: ['http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.grid.json'],
+        formatter: function(options, data) { return data.name }
     };
 
     map = new L.Map('map_canvas', { minZoom:12, maxZoom:17, attributionControl: false });
     map.addLayer(new wax.leaf.connector(tilejson));
     map.setView(new L.LatLng(32.325, -95.304), 13);
 
-    wax.leaf.interaction(map, tilejson);
+    wax.leaf.interaction(map, tilejson, { clickAction: [] });
 
     loc = parse_hash();
 

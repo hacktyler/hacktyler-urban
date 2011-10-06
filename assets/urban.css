@@ -14,6 +14,22 @@ h2 { font-size: 16px; margin-top:5px; }
     position:absolute;
 }
 
+.wax-tooltip {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: black;
+    background: #F3EFE9;
+    padding: 5px;
+    z-index: 9999;
+    font-size: 16px;
+    border:1px solid black;
+}
+
+.wax-tooltip .close {
+    display: none;
+}
+
 #right-col { z-index:900; position:absolute; bottom: 30px; right:30px; width:160px; padding: 10px; background-color: #F3EFE9; border:1px solid black; text-align: center;}
 
 .legend { margin-top: 7px; }
