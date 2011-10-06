@@ -1,14 +1,9 @@
 var map;
 
-//tile layers
-var urban_tiles = new L.TileLayer(
-    "http://media.hacktyler.com/maptiles/tyler-urban/{z}/{x}/{y}.png"
-);
-
 //for search
-var southwest_limit = new google.maps.LatLng(32.2, -95.4);
-var northeast_limit = new google.maps.LatLng(32.4, -95.2);   
-var bounding_box = new google.maps.LatLngBounds(southwest_limit, northeast_limit);
+var southwest_limit = new L.LatLng(32.2, -95.4);
+var northeast_limit = new L.LatLng(32.4, -95.2);   
+var bounding_box = new L.LatLngBounds(southwest_limit, northeast_limit);
 var state_pattern = /\stx\s|\stexas\s/gi;
 var state_swap = 'TX';
 var tracts = {};
@@ -95,11 +90,20 @@ function setup_address_prompt() {
 $(document).ready(function() {
     setup_address_prompt();
 
+    var tilejson = {
+        tilejson: '1.0.0',
+        scheme: 'tms',
+        tiles: ['http://media.hacktyler.com/maptiles/tyler-urban/{z}/{x}/{y}.png'],
+        /*grids: ['http://a.tiles.mapbox.com/mapbox/1.0.0/geography-class/{z}/{x}/{y}.grid.json'],
+        formatter: function(options, data) { return data.NAME }*/
+    };
+
     map = new L.Map('map_canvas', { minZoom:12, maxZoom:17, attributionControl: false });
+    map.addLayer(new wax.leaf.connector(tilejson));
     map.setView(new L.LatLng(32.325, -95.304), 13);
 
-    map.addLayer(urban_tiles);
-    
+    wax.leaf.interaction(map, tilejson);
+
     loc = parse_hash();
 
     if (loc) {
@@ -119,3 +123,4 @@ $(document).ready(function() {
         update_hash();
     });
 });
+
