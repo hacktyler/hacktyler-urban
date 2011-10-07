@@ -12,9 +12,9 @@ function geocode(query) {
         if (!match) {
             query = query + ' ' + state_swap;
         }
-        gr = { 'address': query };
+        gr = { 'address': query, 'bounds': bounding_box };
     } else {
-        gr = { 'location': query };
+        gr = { 'location': query, 'bounds': bounding_box };
     }
     geocoder.geocode(gr, handle_geocode);
 }
@@ -28,7 +28,7 @@ function handle_geocode(results, status) {
     search_callback(lat, lng);
 }
 
-$(document).ready(function() {
+$(function() {
     $("#search").submit(function(){
         geocode($("#query").val());
         return false;

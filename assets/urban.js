@@ -1,12 +1,13 @@
 var map;
+var marker;
 
-//for search
-var southwest_limit = new L.LatLng(32.2, -95.4);
-var northeast_limit = new L.LatLng(32.4, -95.2);   
-var bounding_box = new L.LatLngBounds(southwest_limit, northeast_limit);
+// Search
+var southwest_limit = new google.maps.LatLng(32.2, -95.4);
+var northeast_limit = new google.maps.LatLng(32.4, -95.2);   
+var bounding_box = new google.maps.LatLngBounds(southwest_limit, northeast_limit);
 var state_pattern = /\stx\s|\stexas\s/gi;
 var state_swap = 'TX';
-var tracts = {};
+
 var drop_marker = function(lat,lon,zoom){
     if (zoom == null){
         zoom = 16;
@@ -28,8 +29,8 @@ var drop_marker = function(lat,lon,zoom){
     map.setView(offset_latlng, zoom, true);
 }
 var search_callback = drop_marker;
-var marker;
 
+// URLs
 function update_hash(){
     window.location.hash = make_hash();
 }
@@ -62,6 +63,7 @@ function make_hash() {
     return parts.join(",");
 }
 
+// Address prompt
 function setup_address_prompt() {
     $('[placeholder]').focus(function() {
       var input = $(this);
@@ -87,7 +89,7 @@ function setup_address_prompt() {
     });
 }
 
-$(document).ready(function() {
+$(function() {
     setup_address_prompt();
 
     var tilejson = {
