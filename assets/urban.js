@@ -10,7 +10,7 @@ var state_swap = 'TX';
 
 var drop_marker = function(lat,lon,zoom){
     if (zoom == null){
-        zoom = 16;
+        zoom = 17;
     }
     map.setView(map.getCenter(), zoom, true);
     var latlng = new L.LatLng(lat, lon);
@@ -92,19 +92,10 @@ function setup_address_prompt() {
 $(function() {
     setup_address_prompt();
 
-    var tilejson = {
-        tilejson: '1.0.0',
-        scheme: 'tms',
-        tiles: ['http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.png'],
-        grids: ['http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.grid.json'],
-        formatter: function(options, data) { return data.name }
-    };
-
     map = new L.Map('map_canvas', { minZoom:12, maxZoom:17, attributionControl: false });
-    map.addLayer(new wax.leaf.connector(tilejson));
+    tiles = new L.TileLayer('http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.png', { scheme: 'tms' });
+    map.addLayer(tiles);
     map.setView(new L.LatLng(32.325, -95.304), 13);
-
-    wax.leaf.interaction(map, tilejson, { clickAction: [] });
 
     loc = parse_hash();
 
