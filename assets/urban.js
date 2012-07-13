@@ -93,7 +93,7 @@ $(function() {
     setup_address_prompt();
 
     map = new L.Map('map_canvas', { minZoom:12, maxZoom:17, attributionControl: false });
-    tiles = new L.TileLayer('http://media.hacktyler.com/maptiles/tyler-urban/1.0.0/tyler-urban/{z}/{x}/{y}.png', { scheme: 'tms' });
+    tiles = new L.TileLayer('http://media.hacktyler.com/maptiles/tyler-urban/{z}/{x}/{y}.png');
     map.addLayer(tiles);
     map.setView(new L.LatLng(32.325, -95.304), 13);
 
